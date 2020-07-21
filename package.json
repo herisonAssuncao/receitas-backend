@@ -4,7 +4,9 @@
   "description": "Backend para a API da aplicação de Receitas Compartilhadas",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon src/server.js --watch src"
+    "start": "nodemon src/server.js --watch src",
+    "db:migrate": "npx sequelize db:migrate",
+    "db:seed": "npx sequelize db:seed:all"
   },
   "repository": {
     "type": "git",
@@ -22,10 +24,15 @@
   },
   "homepage": "https://github.com/herisonAssuncao/receitas-backend#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "pg": "^8.3.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.4",
+    "sequelize-cli": "^6.2.0",
     "sucrase": "^3.15.0"
   }
 }
